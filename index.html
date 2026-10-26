@@ -1,0 +1,690 @@
+<title>신혜진 HRD 포트폴리오</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: 흰 지면 + 파스텔 그라데이션 블롭 히어로, 큰 세리프 섹션 타이틀, 보라 그라데이션 성과 배너, 프로젝트 카드, Before/Final 뷰어, 경력, Say Hello 밴드 */
+:root {
+  --bg: #f8f8fb;
+  --paper: #ffffff;
+  --ink: #1a1b25;
+  --muted: #6a6e7c;
+  --line: #e2e3eb;
+  --accent: #4b3fe0;
+  --accent-soft: #e9e6ff;
+  --ok: #2f8f6b;
+  --g-sky: #a9dcff;
+  --g-lilac: #bba8ff;
+  --g-pink: #ffc4e4;
+  --display: "Cormorant Garamond", "Times New Roman", serif;
+  --body: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; }
+html.lock { overflow: hidden; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--body); font-size: 15px; line-height: 1.75; font-weight: 300;
+  word-break: keep-all; overflow-wrap: break-word;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--bg); }
+.wrap { max-width: 1120px; margin: 0 auto; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; text-align: inherit; }
+h1, h2, h3, h4, p, ul, dl, dd { margin: 0; padding: 0; }
+ul { list-style: none; }
+h1, h2, h3 { text-wrap: balance; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+img { display: block; max-width: 100%; }
+section { scroll-margin-top: 76px; }
+@keyframes in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@keyframes morph { 0% { border-radius: 58% 42% 55% 45% / 50% 55% 45% 50%; transform: rotate(0deg); } 100% { border-radius: 44% 56% 46% 54% / 56% 44% 56% 44%; transform: rotate(16deg) scale(1.05); } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } html { scroll-behavior: auto; } }
+
+/* header */
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--bg); }
+.top .wrap { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; padding-block: 16px; }
+.logo { font-family: var(--display); font-size: 26px; letter-spacing: .01em; font-weight: 500; line-height: 1; }
+.rt { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.nav { display: flex; gap: 2px; flex-wrap: wrap; font-size: 14px; }
+.nav button { padding: 4px 12px; border-radius: 999px; color: var(--muted); transition: color .2s, background .2s; }
+.nav button:hover { color: var(--ink); background: #ececf3; }
+.talk { font-family: var(--display); font-size: 17px; border-bottom: 1px solid var(--ink); line-height: 1.2; }
+.talk:hover { color: var(--accent); border-color: var(--accent); }
+
+/* shared */
+.pill { display: inline-flex; align-items: center; gap: 8px; padding: 4px 16px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: 13px; font-weight: 500; letter-spacing: .02em; }
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 26px; border-radius: 999px; background: var(--ink); color: #fff; font-weight: 400; transition: transform .2s, background .2s; }
+.btn:hover { transform: translateY(-2px); background: var(--accent); }
+.btn.ghost { background: var(--paper); color: var(--ink); box-shadow: inset 0 0 0 1px var(--line); }
+.btn.ghost:hover { box-shadow: inset 0 0 0 1px var(--ink); background: var(--paper); }
+.btn.sm { padding: 8px 18px; font-size: 14px; }
+.sec { padding-block: 120px 0; }
+.sh { margin-bottom: 40px; display: grid; gap: 10px; justify-items: start; }
+.sh h2 { font-family: var(--display); font-weight: 400; font-size: clamp(48px, 8vw, 96px); line-height: 1; letter-spacing: -.015em; }
+.sh p { color: var(--muted); max-width: 520px; font-size: 14.5px; }
+.tabs { display: flex; gap: 24px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+.tabs button { padding: 8px 0; font-family: var(--display); font-size: 21px; color: var(--muted); border-bottom: 2px solid transparent; margin-bottom: -1px; transition: color .2s; }
+.tabs button:hover { color: var(--ink); }
+.tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips span { padding: 3px 14px; border-radius: 999px; background: var(--paper); box-shadow: inset 0 0 0 1px var(--line); font-size: 13.5px; }
+.bl li { position: relative; padding-left: 16px; font-size: 14px; margin-top: 4px; }
+.bl li::before { content: ""; position: absolute; left: 0; top: .8em; width: 6px; height: 1px; background: var(--accent); }
+.ck li { position: relative; padding-left: 26px; font-size: 13.5px; line-height: 1.6; margin-top: 8px; }
+.ck li::before { content: "✓"; position: absolute; left: 0; top: 1px; width: 17px; height: 17px; border-radius: 50%; background: #d9efe6; color: var(--ok); font-size: 11px; line-height: 17px; text-align: center; }
+
+/* hero */
+.hero { position: relative; min-height: 520px; padding-block: 72px 24px; display: grid; align-content: center; gap: 22px; overflow: hidden; }
+.blob { position: absolute; right: 0; top: 2%; width: min(56vw, 480px); aspect-ratio: 1; z-index: 0; filter: blur(4px);
+  background: radial-gradient(circle at 28% 28%, var(--g-sky) 0, transparent 58%), radial-gradient(circle at 72% 38%, var(--g-lilac) 0, transparent 62%), radial-gradient(circle at 48% 84%, var(--g-pink) 0, transparent 60%), #dcd6ff;
+  animation: morph 12s ease-in-out infinite alternate; }
+.hero > :not(.blob) { position: relative; z-index: 1; }
+.hero .dash { width: 28px; height: 2px; background: var(--ink); }
+.hero h1 { font-family: var(--display); font-weight: 400; font-size: clamp(58px, 11vw, 140px); line-height: .96; letter-spacing: -.02em; }
+.hero .sub { color: var(--muted); max-width: 440px; font-size: 14.5px; }
+.hero .role { font-size: 13px; font-weight: 500; letter-spacing: .02em; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pills button { padding: 7px 18px; border-radius: 999px; background: var(--paper); box-shadow: inset 0 0 0 1px var(--line); font-size: 13.5px; transition: box-shadow .2s, transform .2s; }
+.pills button:hover { box-shadow: inset 0 0 0 1px var(--accent); transform: translateY(-2px); }
+.hero .cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 6px; }
+
+.stmt { font-size: clamp(28px, 5vw, 56px); font-weight: 700; line-height: 1.32; letter-spacing: -.025em; max-width: 920px; padding-top: 88px; }
+.stmt em { font-style: normal; color: var(--accent); background: linear-gradient(90deg, #6a55ee, #3fa5e8); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.stmt-s { margin-top: 20px; color: var(--muted); max-width: 520px; font-size: 14.5px; }
+
+/* projects */
+.filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
+.filters button { padding: 6px 18px; border-radius: 999px; background: var(--paper); box-shadow: inset 0 0 0 1px var(--line); font-size: 14px; transition: all .2s; }
+.filters button:hover { box-shadow: inset 0 0 0 1px var(--ink); }
+.filters button[aria-pressed="true"] { background: var(--ink); color: #fff; box-shadow: none; }
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.pc { display: flex; flex-direction: column; background: var(--paper); border-radius: 24px; overflow: hidden; box-shadow: 0 0 0 1px var(--line); transition: transform .3s, box-shadow .3s; animation: in .35s ease both; }
+.pc:hover { transform: translateY(-5px); box-shadow: 0 0 0 1px var(--line), 0 30px 50px -34px rgba(60,50,140,.5); }
+.pc .ph { position: relative; aspect-ratio: 4 / 3; background: linear-gradient(135deg, #e9e6fa, #f3f1fb); overflow: hidden; cursor: pointer; }
+.pc .ph img { position: absolute; inset: 16px; width: calc(100% - 32px); height: calc(100% - 32px); object-fit: contain; filter: drop-shadow(0 10px 16px rgba(50,40,120,.28)); transition: transform .6s; }
+.pc:hover .ph img { transform: scale(1.04); }
+.pc .pb { padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 4px; flex: 1; }
+.pc .org { align-self: flex-start; font-size: 11.5px; padding: 2px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-weight: 400; }
+.pc h3 { font-size: 18px; font-weight: 500; line-height: 1.4; margin-top: 8px; }
+.pc .role { font-family: var(--display); font-size: 18px; color: var(--muted); }
+.pc .desc { font-size: 13.5px; color: var(--muted); margin-top: 4px; }
+.pc .ck { margin-top: 8px; flex: 1; }
+.pc .btn { margin-top: 18px; justify-content: center; width: 100%; background: #efeff5; color: var(--ink); font-size: 14px; padding: 9px 16px; }
+.pc .btn:hover { background: var(--accent); color: #fff; }
+
+/* compare */
+.cmp { background: var(--paper); border-radius: 32px; padding: 32px; box-shadow: 0 0 0 1px var(--line); }
+.cmp .ptabs { display: flex; gap: 8px; flex-wrap: wrap; }
+.cmp .ptabs button { padding: 7px 18px; border-radius: 999px; background: var(--bg); font-size: 14px; transition: all .2s; }
+.cmp .ptabs button:hover { background: #ececf3; }
+.cmp .ptabs button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+.cmp .body { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 28px; margin-top: 24px; background: var(--bg); border-radius: 24px; padding: 24px; align-items: start; }
+.cmp .txt h4 { font-size: 20px; font-weight: 500; margin-top: 14px; }
+.cmp .txt .box { margin-top: 14px; background: var(--paper); border-radius: 16px; padding: 16px 18px; font-size: 14px; }
+.cmp .figure { display: grid; gap: 12px; min-width: 0; }
+.cmp .stage { height: clamp(300px, 52vh, 480px); background: var(--paper); border-radius: 16px; }
+.stage { position: relative; display: grid; place-items: center; box-shadow: 0 0 0 1px var(--line); cursor: zoom-in; overflow: hidden; width: 100%; padding: 14px; }
+.stage img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.badge { position: absolute; top: 14px; left: 14px; font-family: var(--display); letter-spacing: .12em; text-transform: uppercase; font-size: 14px; padding: 3px 14px; border-radius: 999px; background: #e8e8ef; color: var(--muted); }
+.badge.after { background: var(--accent); color: #fff; }
+.badge.plan { background: var(--accent-soft); color: var(--accent); }
+.stage.empty { cursor: default; background: var(--bg); box-shadow: inset 0 0 0 1px var(--line); border: 1px dashed #c9cbd8; }
+.stage.empty p { color: var(--muted); font-size: 14px; text-align: center; }
+.stagebox { position: relative; }
+.stagebox .badge { z-index: 2; }
+.stagebox .zoomhint { z-index: 2; }
+.cmp .stage.tall { height: clamp(380px, 72vh, 680px); place-items: start center; align-content: start; overflow-y: auto; cursor: zoom-in; }
+.stage.tall img { width: min(100%, 460px); height: auto; max-height: none; }
+.stage.tall.low img { width: min(100%, 300px); }
+#lb.tall.low img { width: min(100%, 420px); }
+#lb.tall { overflow-y: auto; place-items: start center; }
+#lb.tall img { max-height: none; width: min(100%, 720px); height: auto; }
+.zoomhint { position: absolute; right: 14px; bottom: 12px; font-size: 12px; color: var(--muted); background: rgba(255,255,255,.92); padding: 2px 10px; border-radius: 999px; }
+.seg { display: inline-flex; padding: 3px; border-radius: 999px; background: #e9e9f0; justify-self: start; }
+.seg button { padding: 4px 20px; border-radius: 999px; font-family: var(--display); font-size: 17px; letter-spacing: .04em; color: var(--muted); transition: all .2s; }
+.seg button[aria-pressed="true"] { background: var(--paper); color: var(--ink); box-shadow: 0 2px 6px rgba(40,46,70,.16); }
+.res { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; margin-top: 12px; }
+.res > div { background: var(--paper); border-radius: 16px; padding: 14px 14px; box-shadow: 0 0 0 1px var(--line); }
+.res .n { font-family: var(--display); font-size: 44px; font-weight: 300; line-height: 1; }
+.res .n sup { font-size: .42em; color: var(--accent); margin-left: 2px; vertical-align: top; position: relative; top: .35em; }
+.res .l { margin-top: 6px; font-size: 13px; }
+
+/* career */
+.career { display: grid; gap: 16px; }
+.job { background: var(--paper); border-radius: 24px; padding: 28px 32px; box-shadow: 0 0 0 1px var(--line); display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 20px 40px; }
+.job h3 { font-size: 22px; font-weight: 500; line-height: 1.35; }
+.job .role { color: var(--accent); font-weight: 700; font-size: 15px; margin-top: 6px; line-height: 1.5; }
+.job .per { display: inline-block; margin-top: 12px; font-size: 13px; padding: 3px 14px; border-radius: 999px; background: var(--bg); font-variant-numeric: tabular-nums; }
+.job .mini { font-size: 13px; font-weight: 500; }
+.job .ck { margin-top: 0; }
+.job .gh { font-size: 12.5px; font-weight: 500; color: var(--muted); letter-spacing: .02em; margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); }
+.job .mini + .gh { margin-top: 10px; padding-top: 0; border-top: 0; }
+
+/* about */
+.about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; }
+.about .intro { font-size: 17px; line-height: 1.95; }
+.about .intro b { font-weight: 500; }
+.cinfo { display: grid; gap: 10px; margin-top: 22px; font-size: 14px; }
+.cinfo dt { font-family: var(--display); font-size: 14px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.cinfo dd { overflow-wrap: anywhere; }
+.rows { margin-top: 18px; display: grid; gap: 14px; animation: in .3s ease both; }
+.rows li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 20px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+.rows .t { font-weight: 400; } .rows .s { color: var(--muted); font-size: 14px; grid-column: 1; }
+.rows .g { display: inline-block; font-style: normal; font-size: 11.5px; padding: 1px 10px; margin-right: 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); vertical-align: 2px; font-weight: 500; }
+.rows .x { grid-column: 1 / -1; margin-top: 2px; }
+.rows .x li { display: block; border: 0; padding: 0 0 0 14px; position: relative; font-size: 13px; color: var(--muted); line-height: 1.65; margin-top: 2px; }
+.rows .x li::before { content: ""; position: absolute; left: 0; top: .85em; width: 6px; height: 1px; background: var(--accent); }
+.rows .d { color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; grid-row: 1; grid-column: 2; text-align: right; }
+
+/* why */
+.acc { display: flex; gap: 14px; }
+.acc .card { flex: 1 1 0; min-width: 0; background: var(--paper); border-radius: 24px; box-shadow: 0 0 0 1px var(--line); overflow: hidden; transition: flex .5s cubic-bezier(.2,.7,.2,1); }
+.acc .card.on { flex: 3.2 1 0; }
+.acc .hd { display: block; width: 100%; padding: 24px 24px 14px; }
+.acc .hd h3 { font-family: var(--display); font-size: 38px; line-height: 1; font-weight: 400; }
+.acc .hd span { display: block; font-size: 12px; color: var(--muted); margin-top: 6px; }
+.acc .bd { padding: 0 24px 24px; opacity: 0; max-height: 0; overflow: hidden; transition: opacity .35s .1s, max-height .4s; }
+.acc .card.on .bd { opacity: 1; max-height: 420px; }
+.acc .bd .btn { margin-top: 16px; }
+.closing { margin-top: 48px; max-width: 760px; }
+.closing p { font-size: clamp(17px, 2vw, 21px); font-weight: 400; }
+.closing p + p { color: var(--accent); font-weight: 500; margin-top: 6px; }
+
+/* hello */
+.hello { border-radius: 36px; text-align: center; padding: clamp(56px, 9vw, 110px) 24px; display: grid; justify-items: center; gap: 18px;
+  background: radial-gradient(circle at 18% 28%, #cfe9ff 0, transparent 52%), radial-gradient(circle at 84% 18%, #e2d4ff 0, transparent 56%), radial-gradient(circle at 62% 96%, #ffd9ee 0, transparent 56%), #f1eefb; }
+.hello h2 { font-family: var(--display); font-weight: 400; font-size: clamp(64px, 12vw, 160px); line-height: .95; letter-spacing: -.02em; }
+.hello p { color: var(--muted); max-width: 440px; }
+.mail { display: inline-flex; align-items: center; gap: 12px; padding: 10px 12px 10px 22px; background: #fff; border-radius: 999px; box-shadow: 0 16px 30px -22px rgba(60,50,140,.6); font-size: 16px; flex-wrap: wrap; justify-content: center; max-width: 100%; }
+.mail button { font-size: 13px; padding: 4px 16px; border-radius: 999px; background: var(--ink); color: #fff; }
+.mail button:hover { background: var(--accent); }
+.hello .tel { font-size: 14px; color: var(--muted); }
+
+.foot { margin-top: 56px; padding-block: 22px 40px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 10px 24px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted); }
+
+/* modal */
+#md { position: fixed; inset: 0; z-index: 40; background: var(--bg); overflow-y: auto;
+  padding: env(safe-area-inset-top, 0px) max(16px, env(safe-area-inset-right, 0px)) env(safe-area-inset-bottom, 0px) max(16px, env(safe-area-inset-left, 0px)); animation: in .25s ease both; }
+.mtop { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-block: 18px 14px; font-size: 14px; color: var(--muted); }
+.mtop button { color: var(--ink); padding: 6px 16px; border-radius: 999px; background: var(--paper); box-shadow: inset 0 0 0 1px var(--line); }
+.mtop button:hover { box-shadow: inset 0 0 0 1px var(--accent); color: var(--accent); }
+.dgrid { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 48px; padding-bottom: 56px; }
+.dgrid .stage { height: clamp(360px, 64vh, 720px); background: var(--paper); border-radius: 20px; padding: 20px; }
+.stagewrap { position: relative; }
+.sa { position: absolute; top: 50%; transform: translateY(-50%); width: 46px; height: 46px; border-radius: 50%; background: rgba(255,255,255,.95); box-shadow: 0 8px 20px -8px rgba(40,46,70,.6); display: grid; place-items: center; font-size: 18px; text-align: center; transition: background .2s, color .2s; }
+.sa:hover { background: var(--ink); color: #fff; }
+.sa.prev { left: 12px; } .sa.next { right: 12px; }
+.cnt { position: absolute; left: 14px; bottom: 12px; font-size: 12px; color: var(--muted); background: rgba(255,255,255,.92); padding: 2px 10px; border-radius: 999px; font-variant-numeric: tabular-nums; }
+.mctl { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; margin-top: 16px; }
+.cap { font-size: 14px; font-weight: 400; }
+.thumbs { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+.thumbs button { width: 104px; height: 76px; border-radius: 10px; overflow: hidden; background: #e8e8ef; opacity: .6; box-shadow: 0 0 0 2px transparent; transition: all .2s; }
+.thumbs button:hover { opacity: 1; }
+.thumbs button[aria-pressed="true"] { opacity: 1; box-shadow: 0 0 0 2px var(--accent); }
+.thumbs img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.info .tag { display: inline-block; font-size: 12px; letter-spacing: .06em; padding: 3px 12px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-weight: 500; }
+.info h2 { font-family: var(--display); font-weight: 400; font-size: clamp(40px, 4.8vw, 60px); line-height: 1.05; margin-top: 14px; }
+.info .ko-t { font-size: 18px; font-weight: 500; margin-top: 6px; }
+.info .lead { color: var(--muted); margin-top: 8px; }
+.info .tabs { margin-top: 26px; }
+.tp { padding-block: 22px 8px; min-height: 280px; animation: in .3s ease both; }
+.tp p + p { margin-top: 10px; }
+.tp .mini { font-family: var(--display); font-size: 17px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 22px 0 8px; }
+.tp .mini:first-child { margin-top: 0; }
+.ba { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 14px; align-items: stretch; margin-top: 22px; }
+.ba > div { padding: 14px 18px; border-radius: 16px; font-size: 14px; line-height: 1.65; }
+.ba small { display: block; font-family: var(--display); font-size: 15px; letter-spacing: .12em; text-transform: uppercase; }
+.ba .b { background: #ececf2; } .ba .b small { color: var(--muted); }
+.ba .a { background: var(--accent-soft); } .ba .a small { color: var(--accent); }
+.ba .ar { background: none; padding: 0; align-self: center; font-family: var(--display); font-size: 26px; color: var(--accent); }
+.steps li { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 12px; padding-block: 12px; border-top: 1px solid var(--line); }
+.steps li:first-child { border-top: 0; padding-top: 0; }
+.steps .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); margin-top: 9px; }
+.steps h4 { font-size: 15px; font-weight: 500; }
+.steps p { font-size: 13.5px; color: var(--muted); line-height: 1.7; margin: 0; }
+.pn { display: flex; justify-content: space-between; gap: 12px; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 14px; }
+.pn button { max-width: 48%; }
+.pn button:hover { color: var(--accent); }
+.pn small { display: block; color: var(--muted); font-size: 12px; }
+.pn .nx { text-align: right; margin-left: auto; }
+
+/* lightbox */
+#lb { position: fixed; inset: 0; z-index: 50; background: rgba(248,248,251,.97); display: grid; place-items: center; padding: calc(24px + env(safe-area-inset-top, 0px)) calc(24px + env(safe-area-inset-right, 0px)) calc(24px + env(safe-area-inset-bottom, 0px)) calc(24px + env(safe-area-inset-left, 0px)); cursor: zoom-out; animation: in .25s ease both; }
+#lb img { max-width: 100%; max-height: 100%; object-fit: contain; box-shadow: 0 30px 60px -30px rgba(40,46,70,.5); background: #fff; }
+#lb .x { position: fixed; top: calc(16px + env(safe-area-inset-top, 0px)); right: calc(20px + env(safe-area-inset-right, 0px)); font-family: var(--display); font-size: 18px; padding: 4px 16px; border-radius: 999px; background: #fff; box-shadow: 0 6px 14px -8px rgba(40,46,70,.5); }
+
+@media (max-width: 900px) {
+  .sec { padding-top: 88px; }
+  .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cmp .body, .dgrid, .about, .job { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .cmp { padding: 22px 16px; }
+  .job { padding: 24px 22px; }
+  .blob { width: min(70vw, 360px); opacity: .85; }
+}
+@media (max-width: 640px) {
+  .cards { grid-template-columns: minmax(0, 1fr); }
+  .acc { flex-direction: column; }
+  .acc .card, .acc .card.on { flex: none; }
+  .acc .bd { opacity: 1; max-height: none; }
+  .ba { grid-template-columns: minmax(0, 1fr); }
+  .ba .ar { transform: rotate(90deg); justify-self: center; }
+  .dgrid .stage, .cmp .stage { height: clamp(280px, 52vh, 420px); }
+  .hero { padding-top: 120px; }
+  .blob { top: -2%; right: -10%; }
+  .nav { display: none; }
+}
+
+.hl { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; margin-top: 44px; }
+.hlc { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 20px 18px 18px; display: flex; flex-direction: column; gap: 6px; }
+.hlc b { font-family: var(--display); font-weight: 500; font-size: clamp(34px, 4vw, 48px); line-height: 1; color: var(--accent); }
+.hlc b i { font-style: normal; font-size: .55em; margin-left: 2px; }
+.hlc strong { font-size: 14px; font-weight: 600; color: var(--ink, #1c1c28); margin-top: 6px; }
+.hlc span { font-size: 12.5px; line-height: 1.5; color: var(--muted); }
+@media (max-width: 900px) { .hl { grid-template-columns: repeat(2, minmax(0, 1fr)); } .hlc:last-child { grid-column: 1 / -1; } }
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <button class="logo" type="button" data-act="nav" data-t="hero" aria-label="맨 위로">hyejin shin</button>
+    <div class="rt">
+      <nav class="nav" aria-label="섹션 이동">
+        <button type="button" data-act="nav" data-t="about">About</button>
+        <button type="button" data-act="nav" data-t="career">Career</button>
+        <button type="button" data-act="nav" data-t="projects">Projects</button>
+        <button type="button" data-act="nav" data-t="compare">Before &amp; After</button>
+        <button type="button" data-act="nav" data-t="why">Why Me</button>
+      </nav>
+      <button class="talk" type="button" data-act="nav" data-t="hello">Let’s Talk</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" id="app">
+  <section id="s-hero"></section>
+  <section id="s-statement"></section>
+  <section class="sec" id="s-about"></section>
+  <section class="sec" id="s-career"></section>
+  <section class="sec" id="s-projects"></section>
+  <section class="sec" id="s-compare"></section>
+  <section class="sec" id="s-why"></section>
+  <section class="sec" id="s-hello"></section>
+</main>
+
+<div class="wrap">
+  <footer class="foot">
+    <span>Copyrightⓒ2026 SHIN HYEJIN, All Rights Reserved.</span>
+    <span>Seoul, South Korea</span>
+  </footer>
+</div>
+
+<div id="md" hidden role="dialog" aria-modal="true" aria-label="프로젝트 상세"><div class="wrap" id="mdin"></div></div>
+<div id="lb" hidden data-act="lbclose"><button class="x" type="button" data-act="lbclose">닫기 ✕</button><img id="lbimg" alt=""></div>
+
+<script>
+(function () {
+  var IMG = 'img/';
+  var P = [
+    { id: 'cert', cat: 'ai', tag: 'AI Innovation', org: 'aSSIST', en: 'Certificate Portal', ko: 'AI 수료증 자동 발급 시스템',
+      lead: '교육생이 본인 인증 후 언제든 수료증을 내려받는 웹서비스', cover: 'cert-3',
+      story: ['교육 종료 후 수료증을 교육생에게 개별 메일로 발송해야 했습니다. 교육생이 40명이라면 메일을 하나씩 보내야 했고, ‘메일을 찾을 수 없다’, ‘다운로드 기간이 만료됐다’와 같은 문의가 반복되었습니다.',
+              '반복되는 행정 업무를 줄이고 보다 편리한 환경이 필요하다고 판단해, 교육생이 직접 본인 인증 후 언제든지 수료증을 다운로드할 수 있는 웹서비스를 직접 제작했습니다.'],
+      ba: ['개별 메일 발송', '교육생 직접 다운로드'],
+      steps: [{ h: '과정 선택', p: ['수료한 교육 과정 선택', '메일로 안내한 과정 비밀번호 입력'] },
+              { h: '본인인증', p: ['수강생 이름 조회(마스킹 처리)', '교육생 본인 인증 진행'] },
+              { h: '수료증 다운로드', p: ['본인 인증 완료 후 PDF 생성', '별도 문의 없이 재발급 가능'] }],
+      contrib: ['문제점 분석', '서비스 기획 및 설계', 'AI 활용 웹서비스 제작', '테스트 및 실제 운영 적용'],
+      results: [{ n: '99', s: '%', l: '행정 시간 단축' }, { t: '메일 발송 업무 감소' }, { t: '재발송 문의 감소' }, { t: '교육생 편의성 향상' }, { t: '교육 운영 효율 향상' }],
+      media: [{ label: '과정 선택', img: 'cert-2' }, { label: '본인인증', img: 'cert-3' }, { label: '수료증 다운로드', img: 'cert-4' }] },
+
+    { id: 'seat', cat: 'ai', tag: 'AI Innovation', org: 'aSSIST', en: 'Seat Planner', ko: '실시간 자동 자리배치 시스템',
+      lead: '이전 배치 이력을 반영해 클릭 한 번으로 좌석을 재배치', cover: 'seat-3',
+      story: ['여러 차수에 걸쳐 진행되는 교육인 만큼, 동일한 교육생이 참석했습니다. 좌석을 매번 수작업으로 배정하다 보니 같은 교육생이 계속 뒷자리나 측면에 배치되는 등 좌석 편중이 발생할 수 있었고, 이전 배치 이력을 고려해 중복되지 않도록 조정하는 데 많은 시간이 소요되었습니다.',
+              '교육생에게 보다 공정한 교육 환경을 제공하고 반복적인 좌석 배치 업무를 줄이기 위해 AI를 활용한 교육 좌석 자동 배치 시스템을 직접 제작했습니다.'],
+      ba: ['이전 좌석 수작업 확인, 중복되지 않도록 직접 배치', '이전 배치 이력 자동 반영, 클릭 한 번으로 재배치'],
+      steps: [{ h: '교육 정보 입력', p: ['교육 과정 및 차수 입력', '교육생 명단 업로드', '좌석 배치 기준 설정'] },
+              { h: 'AI 자동 좌석 배치', p: ['이전 차수 좌석 이력 반영', '중복을 최소화한 랜덤 배치', '새로고침 버튼으로 무한 재배치'] }],
+      contrib: ['기존 좌석 배치 프로세스 분석', '공정한 좌석 배치 기준 설계', 'AI 기반 자동 배치 서비스 제작', '실제 교육 운영 적용 및 테스트'],
+      results: [{ t: '좌석 배치 시간 단축' }, { t: '반복 업무 감소' }, { t: '좌석 편중 최소화' }, { t: '공정한 교육 환경 조성' }],
+      media: [{ label: '서비스 화면', img: 'seat-1' }, { label: 'AI 자동 좌석 배치', img: 'seat-3' }] },
+
+    { id: 'edu', cat: 'ai', tag: 'AI Innovation', org: 'aSSIST', en: 'EduInsight', ko: '실시간 인텔리전스 대시보드',
+      lead: '만족도와 자유 의견을 AI로 분석해 개선 인사이트를 제공', cover: 'edu-4',
+      story: ['교육 종료 후 수집된 만족도 조사와 자유 의견은 교육 개선을 위한 중요한 데이터였지만, 모든 응답을 직접 읽고 정리하는 데 많은 시간이 소요되었습니다. 특히 과정별·차수별 의견을 비교 분석하고 공통된 개선 사항을 도출하는 과정이 반복적인 업무로 이어졌습니다.',
+              '이를 개선하기 위해 AI를 활용하여 교육 만족도와 자유 의견을 자동으로 분석하고, 교육별 인사이트를 제공하는 분석 시스템을 제작했습니다.'],
+      ba: ['설문 결과 수작업 확인, 과정별 비교 분석 어려움', 'AI 기반 자동 분석, 교육별 결과 통합 관리'],
+      steps: [{ h: '과정 선택', p: ['분석할 교육 과정 선택', '과정별 만족도 조회'] },
+              { h: 'AI 만족도 분석', p: ['만족도 및 후기 자동 분석', '개선 의견 자동 분류'] },
+              { h: '통합 리포트 확인', p: ['주요 인사이트 제공', '전 과정 통합 리포트 확인'] }],
+      contrib: ['만족도 분석 프로세스 개선', 'AI 기반 분석 서비스 설계 및 제작', '교육별 대시보드 구현', '실제 교육 운영 적용 및 테스트'],
+      results: [{ n: '95', s: '%', l: '분석 시간 단축' }, { t: '교육 개선 포인트 도출' }, { t: '교육 품질 관리 효율 향상' }],
+      media: [{ label: '과정 선택', img: 'edu-1' }, { label: 'AI 만족도 분석', img: 'edu-3' }, { label: '통합 리포트 확인', img: 'edu-4' }] },
+
+    { id: 'plan', cat: 'planning', tag: 'Product Planning', org: '해커스 챔프스터디', en: 'Product Planning', ko: '교육 상품 및 이벤트 리뉴얼',
+      lead: '페이지 기획부터 가격 전략, 퍼블리싱 협업까지', cover: 'prod-a1',
+      story: ['교육 상품의 강점을 효과적으로 전달하기 위해 페이지 기획부터 상품 구성, 가격 전략, 퍼블리싱 협업까지 담당했습니다.',
+              '사용자의 관점에서 교육 상품의 강점을 재구성하여 참여율과 매출 전환율 향상에 기여했습니다.',
+              '상품 기획 & 서비스 마케터로 근무하며 5대 교육 상품과 이벤트를 기획하고 런칭했습니다.'],
+      contribLabel: '대표 상품 · 이벤트',
+      contrib: ['2024 리얼후기 이벤트', '2023 꽝없는 복권 이벤트', '기초영문법 환급패스', '만능패턴 비즈니스영어'],
+      ba: ['상품 경쟁력이 전달되지 않음', '상품 이미지 전면 배치, 대표 강사 강조, 참여 동선 개선'],
+      steps: [{ h: '페이지 기획', p: ['페이지 구조 기획', '카피라이팅'] }, { h: '상품 구성', p: ['패키지 구성', '혜택 기획'] },
+              { h: '가격 전략', p: ['프로모션 가격', '이벤트 전략'] }, { h: '부서 협업', p: ['유관부서 협업', '페이지 검수'] },
+              { h: '운영', p: ['페이지 오픈', '운영 및 유지보수'] }],
+      results: [{ n: '+16', s: '%', l: '복권 이벤트 참여자' }, { n: '+27', s: '%', l: '복권 이벤트 매출 전환' }],
+      media: [{ label: '기초영문법 환급 상품 페이지', before: 'prod-b1', after: 'prod-a1' }, { label: '비즈니스영어 상품 페이지', before: 'prod-b2', after: 'prod-a2' },
+              { label: '복권 이벤트 페이지', before: 'ev-b', after: 'ev-a' }] },
+
+    { id: 'brand', cat: 'content', tag: 'Brand Contents', org: 'aSSIST', en: 'HRD Brand Contents', ko: 'HRD 뉴스레터 · SNS 브랜드 콘텐츠 기획',
+      lead: '운영이 중단된 채널의 재활성화', cover: 'ch-ig',
+      story: ['운영이 중단된 공식 인스타그램 채널과 뉴스레터를 재활성화하여 교육 과정 홍보 및 브랜드 콘텐츠를 기획하고 운영했습니다.'],
+      steps: [{ h: '채널 콘텐츠', p: ['카드뉴스: 교육 과정의 핵심 내용을 한눈에 이해하도록', '교육 후기: 교육 현장과 평가를 통해 과정의 분위기 전달', '교육결산: 만족도 우수 과정, 신규 교육, 주요 성과 정리', '웹툰 콘텐츠: 교육 정보를 쉽고 친근하게 전달'] }],
+      results: [{ n: '3.5', s: '만', l: '조회수' }, { n: '3', s: '만', l: '도달 수' }, { n: '368.8', s: '%', l: '방문수 증가' }],
+      media: [{ label: '공식 인스타그램 콘텐츠', img: 'ch-ig' }, { label: 'HRD 뉴스레터', img: 'ch-news' }] },
+
+    { id: 'ops', cat: 'operation', tag: 'Operations', org: 'aSSIST · 메이크스타 · 챔프스터디', en: 'Program & Event', ko: '교육 과정 · 프로젝트 운영',
+      lead: '일정 관리, 커뮤니케이션, 현장 대응까지 운영 전반', cover: 'ops-2',
+      story: ['다양한 교육과 이벤트를 운영하며 일정 관리, 커뮤니케이션, 현장 대응까지 운영 전반을 담당했습니다.'],
+      steps: [{ h: '교육 준비', p: ['교육 일정 및 운영 준비', '교재/명찰/물품 제작', '교육 환경 사전 점검'] },
+              { h: '교육 운영', p: ['교육생 출결 및 관리', '강사 커뮤니케이션 지원', '교육 운영 및 이슈 대응'] },
+              { h: '이벤트 운영', p: ['오프라인 이벤트 운영', '응대 및 현장 진행', '운영 일정 관리'] },
+              { h: '프로젝트 기획', p: ['이벤트 페이지 기획', '패키지 및 가격 구성', '퍼블리싱 협업 및 오픈'] }],
+      results: [{ t: '일정 관리' }, { t: '커뮤니케이션' }, { t: '현장 대응' }],
+      media: [{ label: '교육 준비', img: 'ops-1' }, { label: '교육 운영 (H기업 교육)', img: 'ops-2' }, { label: '이벤트 운영', img: 'ops-3' }] }
+  ];
+  var byId = {}; P.forEach(function (p) { byId[p.id] = p; });
+
+  var FILTERS = [['all', '전체 프로젝트'], ['ai', 'AI & 업무 자동화'], ['planning', '교육 상품 기획'], ['content', '브랜드 콘텐츠'], ['operation', '운영']];
+
+  var TALL = { 'af-biz': 1, 'af-package': 1, 'af-grammar': 1, 'af-lottery': 1, 'af-review': 1, 'bf-biz': 1, 'bf-package': 1, 'bf-grammar': 1, 'bf-lottery': 1, 'bf-review': 1, 'cpsm-before': 1, 'cpsm-after': 1, 'plan-biz': 1, 'plan-package': 1, 'plan-grammar': 1, 'plan-lottery': 1, 'plan-review': 1 };
+  var PL = ['페이지 구조 기획', '카피라이팅', '패키지 구성 · 혜택 기획'];
+  var CMP = [
+    { label: 'CPSM 오픈과정',
+      before: { imgs: ['cpsm-before'], h: '기존 홍보 콘텐츠', t: '기본 홍보 콘텐츠를 분석해 정보 전달 흐름의 개선점을 찾았습니다.' },
+      plan: { imgs: ['cpsm-plan-1', 'cpsm-plan-2'], caps: ['상단 기획안', '중간단 기획안'], h: '웹진 기획안', t: '상품의 강점이 전혀 드러나지 않던 페이지를, 차별화 포인트를 가장 먼저 보여주는 구조로 다시 기획했습니다.', l: ['문제: 과정의 강점이 나열·강조되지 않아 매력이 전달되지 않음', '개선: 최초·최다·최고·유일 등 돋보이는 포인트를 상단에 배치', '스토리텔링 중심으로 콘텐츠 흐름 재구성', '기획안 작성 후 디자인팀과 협업해 제작'] },
+      after: { imgs: ['cpsm-after'], h: '최종 웹진', t: '핵심 경쟁력을 상단에 두고 스토리텔링으로 재구성했습니다.' } },
+    { label: '기초영문법 환급패스',
+      before: { imgs: ['bf-grammar'], h: '기존 상품 페이지', t: '오래된 구성으로 경쟁사 환급패스 대비 경쟁력이 부족했습니다.' },
+      plan: { imgs: ['plan-grammar'], h: '페이지 기획안', t: '기존 상품이 오래되어 경쟁사 환급패스에 비해 경쟁력이 없어, 상품 자체를 새로 만들었습니다.', l: ['문제: 노후된 기존 페이지, 경쟁사 문법 환급패스 대비 경쟁력 부족', '기존 상품을 정리하고 신규 상품으로 전면 리모델링', '패키지 과목 · 가격 구성 · 혜택을 처음부터 새로 설계', '페이지 구조와 카피라이팅 기획'] },
+      after: { imgs: ['af-grammar'], h: '리뉴얼 상품 페이지', t: '과목 · 가격 · 혜택을 새로 구성한 신규 상품으로 오픈했습니다.' } },
+    { label: '영문법패키지',
+      before: { imgs: ['bf-package'], h: '기존 상품 페이지', t: '입문자를 위한 영문법 상품이 부재한 상태였습니다.' },
+      plan: { imgs: ['plan-package'], h: '페이지 기획안', t: '문법으로 영어회화까지 이어진다는 가치를 상품명과 톤앤매너로 풀어냈습니다.', l: ['컨셉: 문법을 통해 영어회화까지 — "말문이 트이는 영문법(입에서 술술)" 상품명 신규 개발', '타겟: 영어를 처음 배우는 입문자, 공감을 끌어내는 고민 중심 카피', '톤앤매너: 만화 형식으로 구성해 진입 장벽을 낮춤', '패키지 구성 · 혜택 기획'] },
+      after: { imgs: ['af-package'], h: '리뉴얼 상품 페이지', t: '만화 톤으로 입문자의 공감을 이끄는 최종 상품 페이지입니다.' } },
+    { label: '비즈니스패키지',
+      before: { imgs: ['bf-biz'], h: '기존 상품 페이지', t: '오래되어 클릭하고 싶지 않은 구성이었습니다.' },
+      plan: { imgs: ['plan-biz'], h: '페이지 기획안', t: '클릭하고 싶지 않을 만큼 오래된 기존 상품을 없애고, 직장인 타겟으로 새로 만들었습니다.', l: ['문제: 노후된 기존 상품 페이지, 낮은 클릭 매력', '상품명 리뉴얼: 필요할 때마다 쏙쏙 꺼내 쓰는 "만능패턴 비즈니스영어"', '타겟(직장인)이 업무에서 겪는 어려움과 고민을 스토리형으로 나열', '취업 · 이직 준비를 위한 추가 혜택 구성'] },
+      after: { imgs: ['af-biz'], h: '리뉴얼 상품 페이지', t: '"만능패턴" 컨셉과 스토리형 구성, 취업 · 이직 혜택을 담았습니다.' } },
+    { label: '복권이벤트',
+      before: { imgs: ['bf-lottery'], h: '기존 이벤트 페이지', t: '좋은 상품에 비해 경쟁력이 전달되지 않았습니다.' },
+      plan: { imgs: ['plan-lottery'], h: '이벤트 기획안', t: '좋은 상품에 비해 경쟁력이 전달되지 않던 이벤트를, 참여 동선 중심으로 재구성했습니다.', l: ['문제: 상품 경쟁력이 전달되지 않음', '상단에 스타강사(1위 강사) 사진을 배치해 신뢰와 주목도 강화', '참여 동선 유도 장치를 페이지 전반에 추가'] },
+      after: { imgs: ['af-lottery'], h: '리뉴얼 이벤트 페이지', t: '스타강사를 상단에 배치하고 참여 동선을 강화해 런칭했습니다.' },
+      res: [{ n: '+16', s: '%', l: '참여자' }, { n: '+27', s: '%', l: '매출 전환' }] },
+    { label: '후기이벤트',
+      before: { imgs: ['bf-review'], h: '기존 이벤트 페이지', t: '기존 페이지로는 마케팅에 필요한 후기를 모으지 못했습니다.' },
+      plan: { imgs: ['plan-review'], h: '이벤트 기획안', t: '신규 마케팅에 필요한 후기를 기존 페이지로는 모으지 못해, 후기 수집을 목적으로 개선했습니다.', l: ['목적: 마케팅 활용을 위한 후기 확보 (기존 페이지로는 수집 한계)', '영상후기 이벤트와 베스트 포토후기 이벤트로 구성', '전원 기프티콘 제공, 베스트 후기는 상품권으로 보상', '단계별 참여 방법을 안내해 참여 동선 단순화'] },
+      after: { imgs: ['af-review'], h: '리뉴얼 이벤트 페이지', t: '영상후기 · 포토후기 이벤트로 후기 수집 구조를 개선했습니다.' } }
+  ];
+
+  var CAR = [
+    { org: '서울과학종합대학원대학교 (aSSIST)', sub: '산학협력본부 L&D 기업교육팀', role: '기업교육 / 오픈과정 기획 및 운영', per: '2025.05 – 재직 중',
+      groups: [
+        { h: '기업교육 및 오픈과정', items: ['기업교육: 10여 개 기업 교육 제안서 작성 (기획 참여 및 보조)', '오픈과정: 웹진 기획 진행', '교육 일정 · 물품 · 출결 · 강사 지원 등 교육 현장 운영'] },
+        { h: 'SNS · 브랜드 콘텐츠', items: ['운영이 중단된 공식 인스타그램과 HRD 뉴스레터 재활성화', '카드뉴스, 교육 후기, 교육 결산, 웹툰 콘텐츠 기획 · 제작', '조회수 3.5만, 도달 3만, 방문수 368.8% 증가'] },
+        { h: 'AI 업무 자동화', items: ['AI 수료증 자동 발급 시스템 개발 (행정 시간 99% 단축)', 'Eduinsight 만족도 분석 대시보드 개발 (분석 시간 95% 단축)', '교육 좌석 자동 배치 시스템 개발'] }
+      ] },
+    { org: '해커스 챔프스터디', role: '상품 기획 & 서비스 마케터', per: '2023.07 – 2024.01',
+      groups: [
+        { h: '상품 · 이벤트 기획', items: ['5대 교육 상품 및 이벤트 페이지 기획 · 런칭', '패키지 구성 · 가격 · 혜택 전략 수립', '유관부서 협업, 페이지 검수 및 오픈 · 운영', '복권 이벤트 참여자 +16%, 매출 전환 +27%'] },
+        { h: 'SNS · 검색 마케팅', items: ['검색 키워드 관리: 롱테일 · 저경쟁 키워드를 활용해 블로그 글을 매주 3–4편 작성', '블로그 리뷰 협찬 운영', '앱 푸시 기획: 영어 테스트 등 참여형 콘텐츠로 클릭 · 랜딩 유도'] }
+      ] },
+    { org: '메이크스타', role: '글로벌 서비스 기획 & 마케팅/PM', per: '2022.10 – 2023.02',
+      items: ['글로벌 아티스트 팬덤 프로모션 기획 · 운영', '온 · 오프라인 이벤트 기획 및 운영', '행사 인력 운영 계획 수립 및 스태프 스케줄 총괄 관리', '주간 경쟁사 모니터링을 통한 시장 · 프로모션 동향 파악'] }
+  ];
+
+  var ABOUT = {
+    edu: [{ t: '단국대학교', s: '경영경제대학 무역학과 졸업', d: '2018.03 – 2023.02' }],
+    act: [
+      { g: 'Training', t: '품절 대란을 부르는 콘텐츠 마케팅의 비밀', s: '해커스 교육그룹 임직원 교육', d: '2023.12.01 – 2023.12.31', x: ['근로자직업능력개발법에 따른 교육훈련과정 수료 (2024.01.10)', 'NCS 분류: 마케팅전략기획'] },
+      { g: 'Training', t: '기획에서 판매까지! 이커머스 실무바이블', s: '해커스 교육그룹 임직원 교육', d: '2023.11.01 – 2023.11.30', x: ['근로자직업능력개발법에 따른 교육훈련과정 수료 (2024.01.10)', 'NCS 분류: 일반영업'] },
+      { g: 'Program', t: '신한 커리어업 3기', s: '마케팅 직무 확신 과정', d: '2023.05 – 2023.06' },
+      { g: 'Program', t: '지역특화청년무역전문가양성사업(GTEP) 제15기', s: '단국대학교 · 중소기업 수출 양성 프로젝트', d: '2021.01 – 2022.03', x: ['전 교육과정 이수: 기본교육 50시간, 정규과정 90시간, 지역특화과정 100시간, 특별과정 60시간, 무역현장 마케팅실습 180시간 이상', '산업통상자원부장관 명의 수료증 발급 (2022.03.31)'] }
+    ],
+    awd: [
+      { g: '우수상', t: '2022 유닛로드시스템 공모전', s: '국토교통부' },
+      { g: '우수상', t: 'GTEP 15기 전자상거래 경진대회', s: '단국대학교 GTEP사업단', d: '2021.11.26' },
+      { g: '입선', t: '15기 GTEP 전자상거래 경진대회', s: '한국무역협회 무역아카데미', d: '2021.11.12', x: ['한국무역협회 주관, 5인 팀 수상'] }
+    ]
+  };
+  var WHY = [
+    { h: 'Operation', s: '현장까지 책임지는 교육 운영', items: ['기업 교육 및 행사 운영', '협업 커뮤니케이션', '현장 운영 및 이슈 대응'], to: 'ops' },
+    { h: 'Design', s: '학습자 관점의 교육 상품 설계', items: ['교육 상품·과정 페이지 기획', '구성 및 가격 전략 수립', '데이터 기반 성과 개선'], to: 'plan' },
+    { h: 'Content', s: '교육을 브랜드로', items: ['교육 브랜드 콘텐츠 기획', 'SNS/웹진/뉴스레터', '교육 홍보 콘텐츠 운영'], to: 'brand' },
+    { h: 'AI', s: '반복 업무를 시스템으로', items: ['반복 업무 자동화 시스템', '교육 운영 프로세스 효율화', 'AI 기반 서비스 기획'], to: 'cert' }
+  ];
+
+  var S = { filter: 'all', cmp: 0, cstage: 'before', cidx: 0, pid: null, mi: 0, side: 'after', tab: 'ov', at: 'edu', why: 0 };
+
+  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+  function src(n) { return IMG + n + '.jpg'; }
+  function el(id) { return document.getElementById(id); }
+  function shead(title, sub) { return '<div class="sh"><h2>' + title + '</h2>' + (sub ? '<p>' + sub + '</p>' : '') + '</div>'; }
+
+  var V = {};
+  V.hero = function () {
+    return '<div class="hero"><div class="blob" aria-hidden="true"></div>' +
+      '<span class="dash"></span>' +
+      '<p class="role">HRD Specialist · Learning Design &amp; Operation</p>' +
+      '<h1>I’m Hyejin<br>Shin.</h1>' +
+      '<p class="sub">교육 운영부터 콘텐츠 기획, AI 기반 업무 개선까지.<br><br>문제를 발견하고 실행 가능한 개선으로 연결해 왔습니다.</p>' +
+      '<div class="pills"><button type="button" data-act="pillf" data-f="planning">상품 &amp; 이벤트 기획 (해커스 챔프스터디)</button><button type="button" data-act="nav" data-t="career">AI 자동화 &amp; 교육 기획 (aSSIST)</button></div>' +
+      '<div class="cta"><button class="btn" type="button" data-act="nav" data-t="projects">프로젝트 보기 <span aria-hidden="true">↓</span></button><button class="btn ghost" type="button" data-act="nav" data-t="about">About me</button></div></div>';
+  };
+
+  var HL = [
+    { n: '99', s: '%', l: '행정 시간 단축', d: 'AI 수료증 자동 발급 시스템' },
+    { n: '95', s: '%', l: '분석 시간 단축', d: '만족도 분석 대시보드' },
+    { n: '+27', s: '%', l: '이벤트 매출 전환', d: '복권 이벤트 리뉴얼 (참여자 +16%)' },
+    { n: '368.8', s: '%', l: '채널 방문수 증가', d: '중단된 SNS · 뉴스레터 재활성화' },
+    { n: '10', s: '+', l: '기업 교육 제안서', d: '기획 참여 및 작성 보조' }
+  ];
+  V.statement = function () {
+    return '<p class="stmt">교육 운영의 비효율을 찾아<br>기획과 <em>AI 자동화</em>로 해결하고<br>성과로 증명해 왔습니다.</p>' +
+      '<p class="stmt-s">반복되는 운영 업무를 직접 만든 서비스로 줄이고<br><br>교육 상품과 콘텐츠를 사용자의 관점에서 다시 짰습니다.</p>' +
+      '<div class="hl" role="list" aria-label="주요 성과">' + HL.map(function (h) {
+        return '<div class="hlc" role="listitem"><b>' + h.n + '<i>' + h.s + '</i></b><strong>' + h.l + '</strong><span>' + h.d + '</span></div>';
+      }).join('') + '</div>';
+  };
+
+  function checks(p) {
+    var out = [];
+    p.results.forEach(function (r) { if (out.length < 3) out.push(r.n ? r.n + r.s + ' ' + r.l : r.t); });
+    return out;
+  }
+  V.projects = function () {
+    var list = P.filter(function (p) { return S.filter === 'all' || p.cat === S.filter; });
+    return shead('Projects', 'AI 기반 데이터 분석부터 상품 기획까지, 교육 업무 전반에서 만든 변화를 소개합니다.') +
+      '<div class="filters" role="group" aria-label="프로젝트 분류">' + FILTERS.map(function (f) {
+        return '<button type="button" data-act="filter" data-f="' + f[0] + '" aria-pressed="' + (S.filter === f[0]) + '">' + f[1] + '</button>';
+      }).join('') + '</div>' +
+      '<div class="cards">' + list.map(function (p) {
+        return '<article class="pc"><div class="ph" data-act="open" data-id="' + p.id + '"><img src="' + src(p.cover) + '" alt=""></div>' +
+          '<div class="pb"><span class="org">' + esc(p.org) + '</span><h3>' + esc(p.ko) + '</h3><p class="role">' + esc(p.en) + '</p><p class="desc">' + esc(p.lead) + '</p>' +
+          '<ul class="ck">' + checks(p).map(function (c) { return '<li>' + esc(c) + '</li>'; }).join('') + '</ul>' +
+          '<button class="btn" type="button" data-act="open" data-id="' + p.id + '">자세히 보기 <span aria-hidden="true">→</span></button></div></article>';
+      }).join('') + '</div>';
+  };
+
+  V.compare = function () {
+    var c = CMP[S.cmp], st = c[S.cstage], imgs = st.imgs || [];
+    var names = { before: 'Before', plan: 'Plan', after: 'After' };
+    var nums = { before: '1단계: ', plan: '2단계: ', after: '3단계: ' };
+    var i = Math.min(S.cidx, Math.max(imgs.length - 1, 0));
+    var badge = '<span class="badge ' + S.cstage + '">' + names[S.cstage] + '</span>';
+    var tall = imgs.length && TALL[imgs[i]];
+    var altx = esc(c.label + ' ' + names[S.cstage]);
+    var stage = imgs.length
+      ? (tall
+        ? '<div class="stagebox">' + badge + '<div class="stage tall' + (tall === 2 ? ' low' : '') + '" role="button" tabindex="0" data-act="zoomc" aria-label="이미지 크게 보기"><img id="cmpimg" src="' + src(imgs[i]) + '" alt="' + altx + '"></div><span class="zoomhint">스크롤해서 전체 보기 · 클릭하면 크게</span></div>'
+        : '<button class="stage" type="button" data-act="zoomc" aria-label="이미지 크게 보기">' + badge + '<img id="cmpimg" src="' + src(imgs[i]) + '" alt="' + altx + '"><span class="zoomhint">클릭해서 크게 보기</span></button>')
+      : '<div class="stage empty">' + badge + '<p>' + (S.cstage === 'plan' ? '기획안' : '페이지') + ' 이미지 준비 중</p></div>';
+    var cap = (imgs.length > 1 && st.caps) ? '<p class="cap">' + esc(st.caps[i]) + '</p>' : '';
+    var thumbs = (imgs.length > 1 && st.caps) ? '<div class="thumbs">' + imgs.map(function (x, k) {
+      return '<button type="button" data-act="cimg" data-i="' + k + '" aria-pressed="' + (k === i) + '" title="' + esc(st.caps[k]) + '"><img src="' + src(x) + '" alt="' + esc(st.caps[k]) + '"></button>';
+    }).join('') + '</div>' : '';
+    var hasL = st.l && st.l.length;
+    var box = (st.t || hasL) ? '<div class="box">' + (st.t ? esc(st.t) : '') +
+      (hasL ? '<ul class="bl"' + (st.t ? ' style="margin-top:10px"' : '') + '>' + st.l.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>' : '') + '</div>' : '';
+    var res = (S.cstage === 'after' && c.res) ? '<div class="res">' + c.res.map(function (r) { return '<div><div class="n">' + esc(r.n) + '<sup>' + esc(r.s) + '</sup></div><div class="l">' + esc(r.l) + '</div></div>'; }).join('') + '</div>' : '';
+    return shead('Before · Plan · After', '기존 페이지, 기획안, 최종 페이지를 단계별로 비교해 보세요.') +
+      '<div class="cmp"><div class="ptabs" role="group" aria-label="카테고리 선택">' + CMP.map(function (x, k) {
+        return '<button type="button" data-act="cmp" data-i="' + k + '" aria-pressed="' + (k === S.cmp) + '">' + esc(x.label) + '</button>';
+      }).join('') + '</div>' +
+      '<div class="body"><div class="txt"><div class="seg" role="group" aria-label="단계">' + ['before', 'plan', 'after'].map(function (k) {
+        return '<button type="button" data-act="cside" data-s="' + k + '" aria-pressed="' + (S.cstage === k) + '">' + names[k] + '</button>';
+      }).join('') + '</div><h4>' + nums[S.cstage] + esc(st.h) + '</h4>' + box + res + '</div>' +
+      '<div class="figure">' + stage + cap + thumbs + '</div></div></div>';
+  };
+
+  V.career = function () {
+    return shead('Career', '교육 서비스 기획과 AI 자동화 개발 실무 경력입니다.') +
+      '<div class="career">' + CAR.map(function (j) {
+        return '<article class="job"><div><h3>' + esc(j.org) + '</h3>' + (j.sub ? '<p style="color:var(--muted);font-size:13px">' + esc(j.sub) + '</p>' : '') + '<p class="role">' + esc(j.role) + '</p><span class="per">' + esc(j.per) + '</span></div>' +
+          '<div><p class="mini">주요 업무 및 성과</p>' + (j.groups ? j.groups.map(function (g) {
+            return '<p class="gh">' + esc(g.h) + '</p><ul class="ck">' + g.items.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>';
+          }).join('') : '<ul class="ck">' + j.items.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>') + '</div></article>';
+      }).join('') + '</div>';
+  };
+
+  V.about = function () {
+    var tabs = [['edu', 'Education'], ['act', 'Activities'], ['awd', 'Awards']];
+    return shead('About', '') +
+      '<div class="about"><div><p class="intro">교육 운영부터 콘텐츠 기획, AI 기반 업무 개선까지 다양한 프로젝트를 수행하며 <b>문제를 발견하고 실행 가능한 개선으로 연결</b>해왔습니다. 구성원의 성장을 지원하는 교육 환경을 만들고, 협업을 통해 조직의 운영 효율을 높이는 HR 담당자를 지향합니다.</p>' +
+      '<dl class="cinfo"><div><dt>Phone</dt><dd>+82 10 9205 8075</dd></div><div><dt>Location</dt><dd>Seoul, South Korea</dd></div><div><dt>Email</dt><dd>shj8075@gmail.com</dd></div></dl></div>' +
+      '<div><div class="tabs" role="tablist">' + tabs.map(function (t) { return '<button type="button" role="tab" data-act="atab" data-t="' + t[0] + '" aria-selected="' + (S.at === t[0]) + '">' + t[1] + '</button>'; }).join('') + '</div>' +
+      '<ul class="rows">' + ABOUT[S.at].map(function (r) { return '<li><span class="t">' + (r.g ? '<i class="g">' + esc(r.g) + '</i>' : '') + esc(r.t) + '</span>' + (r.d ? '<span class="d">' + esc(r.d) + '</span>' : '') + '<span class="s">' + esc(r.s) + '</span>' + (r.x ? '<ul class="x">' + r.x.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>' : '') + '</li>'; }).join('') + '</ul></div></div>';
+  };
+
+  V.why = function () {
+    return shead('Why Me', '네 가지 역량을 눌러 관련 프로젝트를 확인해 보세요.') +
+      '<div class="acc">' + WHY.map(function (w, i) {
+        var on = S.why === i;
+        return '<div class="card' + (on ? ' on' : '') + '"><button class="hd" type="button" data-act="why" data-i="' + i + '" aria-expanded="' + on + '"><h3>' + w.h + '</h3><span>' + esc(w.s) + '</span></button>' +
+          '<div class="bd"><ul class="bl">' + w.items.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>' +
+          '<button class="btn sm" type="button" data-act="open" data-id="' + w.to + '">관련 프로젝트 <span aria-hidden="true">→</span></button></div></div>';
+      }).join('') + '</div>' +
+      '<div class="closing"><p>AI를 활용해 업무를 개선하고, 교육 콘텐츠를 기획하며, 교육 운영과 상품 기획까지 경험했습니다.</p><p>앞으로도 사용자의 관점에서 더 나은 교육 경험을 만드는 HRD 담당자로 성장하겠습니다.</p></div>';
+  };
+
+  V.hello = function () {
+    return '<div class="hello"><h2>Say Hello!</h2><p>함께 만들고 싶은 교육 프로젝트나 운영 이야기가 있다면<br><br>편하게 연락 주세요.</p>' +
+      '<div class="mail"><span id="mailtext">shj8075@gmail.com</span><button type="button" data-act="copy">복사</button></div>' +
+      '<p class="tel">+82 10 9205 8075</p></div>';
+  };
+
+  function draw(n) { el('s-' + n).innerHTML = V[n](); }
+
+  /* modal */
+  function detail() {
+    var p = byId[S.pid]; var m = p.media[S.mi]; var pair = !!m.before;
+    var shown = pair ? (S.side === 'before' ? m.before : m.after) : m.img;
+    var idx = P.indexOf(p); var prev = P[(idx + P.length - 1) % P.length]; var next = P[(idx + 1) % P.length];
+    var many = p.media.length > 1;
+    var media = '<div><div class="stagewrap"><button class="stage" type="button" data-act="zoom" aria-label="이미지 크게 보기">' +
+      (pair ? '<span class="badge ' + S.side + '">' + (S.side === 'before' ? 'Before' : 'After') + '</span>' : '') +
+      '<img id="mainimg" src="' + src(shown) + '" alt="' + esc(m.label) + '"><span class="cnt">' + (S.mi + 1) + ' / ' + p.media.length + '</span><span class="zoomhint">클릭해서 크게 보기</span></button>' +
+      (many ? '<button class="sa prev" type="button" data-act="mstep" data-d="-1" aria-label="이전 사진">←</button><button class="sa next" type="button" data-act="mstep" data-d="1" aria-label="다음 사진">→</button>' : '') + '</div>' +
+      '<div class="mctl"><span class="cap">' + esc(m.label) + '</span>' +
+      (pair ? '<span class="seg" role="group" aria-label="전후 비교"><button type="button" data-act="side" data-s="before" aria-pressed="' + (S.side === 'before') + '">Before</button><button type="button" data-act="side" data-s="after" aria-pressed="' + (S.side === 'after') + '">After</button></span>' : '') + '</div>' +
+      '<div class="thumbs">' + p.media.map(function (x, i) {
+        return '<button type="button" data-act="media" data-i="' + i + '" aria-pressed="' + (i === S.mi) + '" title="' + esc(x.label) + '"><img src="' + src(x.after || x.img) + '" alt="' + esc(x.label) + '"></button>';
+      }).join('') + '</div></div>';
+
+    var tabs = [['ov', '개요'], ['pr', '과정'], ['rs', '성과']];
+    var panel = '';
+    if (S.tab === 'ov') {
+      panel = p.story.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') +
+        (p.ba ? '<div class="ba"><div class="b"><small>Before</small>' + esc(p.ba[0]) + '</div><div class="ar" aria-hidden="true">→</div><div class="a"><small>After</small>' + esc(p.ba[1]) + '</div></div>' : '');
+    } else if (S.tab === 'pr') {
+      panel = (p.contrib ? '<div class="mini">' + esc(p.contribLabel || 'Key Contributions') + '</div><div class="chips">' + p.contrib.map(function (c) { return '<span>' + esc(c) + '</span>'; }).join('') + '</div>' : '') +
+        '<div class="mini">Process</div><ul class="steps">' + p.steps.map(function (s) {
+          return '<li><span class="dot"></span><div><h4>' + esc(s.h) + '</h4><p>' + s.p.map(esc).join('<br>') + '</p></div></li>';
+        }).join('') + '</ul>';
+    } else {
+      var nums = p.results.filter(function (r) { return r.n; });
+      var txt = p.results.filter(function (r) { return r.t; });
+      panel = (nums.length ? '<div class="res">' + nums.map(function (r) { return '<div><div class="n">' + esc(r.n) + '<sup>' + esc(r.s) + '</sup></div><div class="l">' + esc(r.l) + '</div></div>'; }).join('') + '</div>' : '') +
+        (txt.length ? '<div class="mini">' + (nums.length ? 'Result' : 'Scope') + '</div><ul class="bl">' + txt.map(function (r) { return '<li>' + esc(r.t) + '</li>'; }).join('') + '</ul>' : '');
+    }
+    var info = '<div class="info"><span class="tag">' + esc(p.tag) + '</span><h2>' + esc(p.en) + '</h2><p class="ko-t">' + esc(p.ko) + '</p><p class="lead">' + esc(p.org) + '</p>' +
+      '<div class="tabs" role="tablist">' + tabs.map(function (t) { return '<button type="button" role="tab" data-act="tab" data-t="' + t[0] + '" aria-selected="' + (S.tab === t[0]) + '">' + t[1] + '</button>'; }).join('') + '</div>' +
+      '<div class="tp" role="tabpanel">' + panel + '</div>' +
+      '<div class="pn"><button type="button" data-act="open" data-id="' + prev.id + '"><small>← 이전 프로젝트</small>' + esc(prev.en) + '</button>' +
+      '<button class="nx" type="button" data-act="open" data-id="' + next.id + '"><small>다음 프로젝트 →</small>' + esc(next.en) + '</button></div></div>';
+    return '<div class="mtop"><button type="button" data-act="mclose" id="mclose">← 프로젝트 목록</button><span>' + (idx + 1) + ' / ' + P.length + '</span></div><div class="dgrid">' + media + info + '</div>';
+  }
+
+  var md = el('md'), lb = el('lb'), lbimg = el('lbimg'), opener = null;
+  function drawModal() { el('mdin').innerHTML = detail(); }
+  function openP(id) {
+    var wasOpen = !md.hidden;
+    if (!wasOpen) opener = document.activeElement;
+    S.pid = id; S.mi = 0; S.side = 'after'; S.tab = 'ov';
+    drawModal(); md.hidden = false; md.scrollTop = 0; document.documentElement.classList.add('lock');
+    var c = el('mclose'); if (c) c.focus();
+  }
+  function closeP() {
+    md.hidden = true; document.documentElement.classList.remove('lock');
+    if (opener && opener.focus) { try { opener.focus(); } catch (e) {} }
+  }
+  function zoom(id) { var im = el(id); lbimg.src = im.src; lbimg.alt = im.alt; lb.classList.toggle('tall', im.naturalHeight / im.naturalWidth > 1.6); lb.classList.toggle('low', im.naturalWidth < 400); lb.hidden = false; lb.scrollTop = 0; }
+  function scrollTo(t) { var n = el('s-' + t); if (n) n.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest('[data-act]');
+    if (!t) return;
+    var a = t.getAttribute('data-act');
+    if (a === 'nav') { scrollTo(t.getAttribute('data-t')); }
+    else if (a === 'filter') { S.filter = t.getAttribute('data-f'); draw('projects'); }
+    else if (a === 'pillf') { S.filter = t.getAttribute('data-f'); draw('projects'); scrollTo('projects'); }
+    else if (a === 'open') { openP(t.getAttribute('data-id')); }
+    else if (a === 'mclose') { closeP(); }
+    else if (a === 'media') { S.mi = +t.getAttribute('data-i'); drawModal(); }
+    else if (a === 'mstep') { var mn = byId[S.pid].media.length; S.mi = (S.mi + (+t.getAttribute('data-d')) + mn) % mn; drawModal(); }
+    else if (a === 'side') { S.side = t.getAttribute('data-s'); drawModal(); }
+    else if (a === 'tab') { S.tab = t.getAttribute('data-t'); drawModal(); }
+    else if (a === 'zoom') { zoom('mainimg'); }
+    else if (a === 'zoomc') { zoom('cmpimg'); }
+    else if (a === 'lbclose') { lb.hidden = true; }
+    else if (a === 'cmp') { S.cmp = +t.getAttribute('data-i'); S.cidx = 0; draw('compare'); }
+    else if (a === 'cside') { S.cstage = t.getAttribute('data-s'); draw('compare'); }
+    else if (a === 'cimg') { S.cidx = +t.getAttribute('data-i'); draw('compare'); }
+    else if (a === 'atab') { S.at = t.getAttribute('data-t'); draw('about'); }
+    else if (a === 'why') { S.why = +t.getAttribute('data-i'); draw('why'); }
+    else if (a === 'copy') {
+      var btn = t, txt = el('mailtext');
+      var done = function (m) { btn.textContent = m; setTimeout(function () { btn.textContent = '복사'; }, 1600); };
+      var fb = function () { var r = document.createRange(); r.selectNodeContents(txt); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); done('선택됨'); };
+      try { navigator.clipboard.writeText(txt.textContent).then(function () { done('복사됨'); }, fb); } catch (err) { fb(); }
+    }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if ((e.key === 'Enter' || e.key === ' ') && e.target.matches && e.target.matches('[role="button"][data-act]')) { e.preventDefault(); e.target.click(); return; }
+    if (e.key === 'Escape') { if (!lb.hidden) lb.hidden = true; else if (!md.hidden) closeP(); return; }
+    if (!md.hidden && lb.hidden && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) {
+      var n = byId[S.pid].media.length;
+      S.mi = (S.mi + (e.key === 'ArrowRight' ? 1 : n - 1)) % n; drawModal();
+    }
+  });
+
+  ['hero', 'statement', 'projects', 'compare', 'career', 'about', 'why', 'hello'].forEach(draw);
+  var h = '';
+  try { h = (location.hash || '').replace('#', ''); } catch (e) {}
+  if (byId[h]) openP(h);
+})();
+</script>
