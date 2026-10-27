@@ -279,13 +279,14 @@ section { scroll-margin-top: 76px; }
   .nav { display: none; }
 }
 
-.hl { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; margin-top: 44px; }
+.hl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 44px; }
 .hlc { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 20px 18px 18px; display: flex; flex-direction: column; gap: 6px; }
+.hlc b, .res .n, .sh h2, .stmt { font-variant-numeric: lining-nums; font-feature-settings: 'lnum' 1; }
 .hlc b { font-family: var(--display); font-weight: 500; font-size: clamp(34px, 4vw, 48px); line-height: 1; color: var(--accent); }
 .hlc b i { font-style: normal; font-size: .55em; margin-left: 2px; }
 .hlc strong { font-size: 14px; font-weight: 600; color: var(--ink, #1c1c28); margin-top: 6px; }
 .hlc span { font-size: 12.5px; line-height: 1.5; color: var(--muted); }
-@media (max-width: 900px) { .hl { grid-template-columns: repeat(2, minmax(0, 1fr)); } .hlc:last-child { grid-column: 1 / -1; } }
+@media (max-width: 900px) { .hl { grid-template-columns: repeat(2, minmax(0, 1fr)); }  }
 </style>
 
 <header class="top">
@@ -331,14 +332,14 @@ section { scroll-margin-top: 76px; }
   var P = [
     { id: 'cert', cat: 'ai', tag: 'AI Innovation', org: 'aSSIST', en: 'Certificate Portal', ko: 'AI 수료증 자동 발급 시스템',
       lead: '교육생이 본인 인증 후 언제든 수료증을 내려받는 웹서비스', cover: 'cert-3',
-      story: ['교육 종료 후 수료증을 교육생에게 개별 메일로 발송해야 했습니다. 교육생이 40명이라면 메일을 하나씩 보내야 했고, ‘메일을 찾을 수 없다’, ‘다운로드 기간이 만료됐다’와 같은 문의가 반복되었습니다.',
+      story: ['교육 종료 후 수료증을 교육생에게 개별 메일로 발송해야 했습니다. 과정마다 30~40명에게 메일을 하나씩 보내야 해 최대 20분이 걸렸고, ‘메일을 찾을 수 없다’, ‘다운로드 기간이 만료됐다’와 같은 문의가 반복되었습니다.',
               '반복되는 행정 업무를 줄이고 보다 편리한 환경이 필요하다고 판단해, 교육생이 직접 본인 인증 후 언제든지 수료증을 다운로드할 수 있는 웹서비스를 직접 제작했습니다.'],
       ba: ['개별 메일 발송', '교육생 직접 다운로드'],
       steps: [{ h: '과정 선택', p: ['수료한 교육 과정 선택', '메일로 안내한 과정 비밀번호 입력'] },
               { h: '본인인증', p: ['수강생 이름 조회(마스킹 처리)', '교육생 본인 인증 진행'] },
               { h: '수료증 다운로드', p: ['본인 인증 완료 후 PDF 생성', '별도 문의 없이 재발급 가능'] }],
       contrib: ['문제점 분석', '서비스 기획 및 설계', 'AI 활용 웹서비스 제작', '테스트 및 실제 운영 적용'],
-      results: [{ n: '99', s: '%', l: '행정 시간 단축' }, { t: '메일 발송 업무 감소' }, { t: '재발송 문의 감소' }, { t: '교육생 편의성 향상' }, { t: '교육 운영 효율 향상' }],
+      results: [{ n: '20→1', s: '분', l: '수료증 발급 소요' }, { t: '다운로드 만료 문의 감소' }, { t: '재발송 문의 감소' }, { t: '교육생 편의성 향상' }, { t: '교육 운영 효율 향상' }],
       media: [{ label: '과정 선택', img: 'cert-2' }, { label: '본인인증', img: 'cert-3' }, { label: '수료증 다운로드', img: 'cert-4' }] },
 
     { id: 'seat', cat: 'ai', tag: 'AI Innovation', org: 'aSSIST', en: 'Seat Planner', ko: '실시간 자동 자리배치 시스템',
@@ -387,13 +388,14 @@ section { scroll-margin-top: 76px; }
       media: [{ label: '공식 인스타그램 콘텐츠', img: 'ch-ig' }, { label: 'HRD 뉴스레터', img: 'ch-news' }] },
 
     { id: 'ops', cat: 'operation', tag: 'Operations', org: 'aSSIST · 메이크스타 · 챔프스터디', en: 'Program & Event', ko: '교육 과정 · 프로젝트 운영',
-      lead: '일정 관리, 커뮤니케이션, 현장 대응까지 운영 전반', cover: 'ops-2',
-      story: ['다양한 교육과 이벤트를 운영하며 일정 관리, 커뮤니케이션, 현장 대응까지 운영 전반을 담당했습니다.'],
-      steps: [{ h: '교육 준비', p: ['교육 일정 및 운영 준비', '교재/명찰/물품 제작', '교육 환경 사전 점검'] },
-              { h: '교육 운영', p: ['교육생 출결 및 관리', '강사 커뮤니케이션 지원', '교육 운영 및 이슈 대응'] },
-              { h: '이벤트 운영', p: ['오프라인 이벤트 운영', '응대 및 현장 진행', '운영 일정 관리'] },
-              { h: '프로젝트 기획', p: ['이벤트 페이지 기획', '패키지 및 가격 구성', '퍼블리싱 협업 및 오픈'] }],
-      results: [{ t: '일정 관리' }, { t: '커뮤니케이션' }, { t: '현장 대응' }],
+      lead: '모집부터 운영보고서까지 교육 한 사이클을 직접 수행', cover: 'ops-2',
+      story: ['공공기관 협업 오픈과정을 월 2개씩 운영하며 모집부터 교강사 소통, 운영 준비, 현장 운영, 교육 후기 수합, 운영보고서 작성까지 한 사이클을 직접 수행했습니다.', '기업·정부 위탁 과정에서는 교수진 섭외와 스케줄 편성, 강의계약까지 맡았고, CPSM 과정은 웹진 기획과 홍보 세미나부터 5~9월 주 2회 수업 운영, 교수진 소통까지 맡았습니다.'],
+      steps: [{ h: '기업 · 정부 과정', p: ['K-뉴딜 아카데미: 대전·대구·부산 3개 지역, 연 2기수(기수당 3개월 · 3트랙)', '교수진 24명 소통 · 스케줄 편성 · 강의계약서 작성', '그룹사 책임급 과정(3차수) · 의료재단 임원 교육(4개월) 운영'] },
+              { h: '모집 · 준비', p: ['오픈과정 수강생 모집 (과정당 약 30~40명)', '교강사 커뮤니케이션', '교육 일정 · 교재 · 물품 · 환경 준비'] },
+              { h: '교육 운영', p: ['출결 및 수강생 관리', '교강사 지원 및 현장 이슈 대응', '교육 후기 수합'] },
+              { h: '결과 보고', p: ['교육 후기 취합 및 정리', '운영보고서 작성 완료'] },
+              { h: '이벤트 운영', p: ['오프라인 이벤트 운영', '응대 및 현장 진행', '운영 일정 관리'] }],
+      results: [{ n: '100', s: '명+', l: '기수당 교육생 (K-뉴딜)' }, { n: '2', s: '개 / 월', l: '오픈과정 운영' }, { t: '운영보고서 작성까지 완료' }],
       media: [{ label: '교육 준비', img: 'ops-1' }, { label: '교육 운영 (H기업 교육)', img: 'ops-2' }, { label: '이벤트 운영', img: 'ops-3' }] }
   ];
   var byId = {}; P.forEach(function (p) { byId[p.id] = p; });
@@ -433,9 +435,9 @@ section { scroll-margin-top: 76px; }
   var CAR = [
     { org: '서울과학종합대학원대학교 (aSSIST)', sub: '산학협력본부 L&D 기업교육팀', role: '기업교육 / 오픈과정 기획 및 운영', per: '2025.05 – 재직 중',
       groups: [
-        { h: '기업교육 및 오픈과정', items: ['기업교육: 10여 개 기업 교육 제안서 작성 (기획 참여 및 보조)', '오픈과정: 웹진 기획 진행', '교육 일정 · 물품 · 출결 · 강사 지원 등 교육 현장 운영'] },
+        { h: '기업교육 및 오픈과정', items: ['기업교육 제안서 10여 건 (기획 참여 · 보조)', '그룹사 책임급 리더십 과정 3차수 운영 (차수당 40명)', '의료재단 임원 교육 4개월 운영', 'K-뉴딜 아카데미: 기수당 100명+, 교수진 24명 소통 · 스케줄링', '오픈과정: 월 2개 과정, 모집부터 운영보고서까지', 'CPSM 과정: 웹진 기획 · 홍보 세미나 · 운영'] },
         { h: 'SNS · 브랜드 콘텐츠', items: ['운영이 중단된 공식 인스타그램과 HRD 뉴스레터 재활성화', '카드뉴스, 교육 후기, 교육 결산, 웹툰 콘텐츠 기획 · 제작', '조회수 3.5만, 도달 3만, 방문수 368.8% 증가'] },
-        { h: 'AI 업무 자동화', items: ['AI 수료증 자동 발급 시스템 개발 (행정 시간 99% 단축)', 'Eduinsight 만족도 분석 대시보드 개발 (분석 시간 95% 단축)', '교육 좌석 자동 배치 시스템 개발'] }
+        { h: 'AI 업무 자동화', items: ['AI 수료증 자동 발급 시스템 개발 (개별 메일 발송 최대 20분 → 약 1분)', 'Eduinsight 만족도 분석 대시보드 개발 (분석 시간 95% 단축)', '교육 좌석 자동 배치 시스템 개발'] }
       ] },
     { org: '해커스 챔프스터디', role: '상품 기획 & 서비스 마케터', per: '2023.07 – 2024.01',
       groups: [
@@ -486,11 +488,12 @@ section { scroll-margin-top: 76px; }
   };
 
   var HL = [
-    { n: '99', s: '%', l: '행정 시간 단축', d: 'AI 수료증 자동 발급 시스템' },
+    { n: '20→1', s: '분', l: '수료증 발급 소요', d: 'AI 수료증 자동 발급 시스템' },
     { n: '95', s: '%', l: '분석 시간 단축', d: '만족도 분석 대시보드' },
+    { n: '2', s: '개 / 월', l: '오픈과정 운영', d: '과정당 약 30~40명 · 모집부터 운영보고서까지' },
     { n: '+27', s: '%', l: '이벤트 매출 전환', d: '복권 이벤트 리뉴얼 (참여자 +16%)' },
     { n: '368.8', s: '%', l: '채널 방문수 증가', d: '중단된 SNS · 뉴스레터 재활성화' },
-    { n: '10', s: '+', l: '기업 교육 제안서', d: '기획 참여 및 작성 보조' }
+    { n: '100', s: '명+', l: '기수당 교육생 규모', d: 'K-뉴딜 아카데미 · 3개 지역 · 교수진 24명 소통' }
   ];
   V.statement = function () {
     return '<p class="stmt">교육 운영의 비효율을 찾아<br>기획과 <em>AI 자동화</em>로 해결하고<br>성과로 증명해 왔습니다.</p>' +
